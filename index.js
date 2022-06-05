@@ -8,15 +8,27 @@ const dates = [
 ];
 
 // TODO: Buatlah fungsi createDate
-const createDate = null;
+const createDate = function (param1, param2) {
+  let arrDates = [];
+  for (let i = 0; i < param1.length; i++) {
+    let convertDates = new Date(param1[i]) / 1000;
+    arrDates.push(convertDates);
+  }
+  let resultArrDates = arrDates.sort();
+  let result;
+  if (param2 === undefined) {
+    result = resultArrDates.join("-");
+  } else {
+    result = resultArrDates[param2].toString();
+  }
+  return result;
+};
 
 // ! JANGAN DIMODIFIKASI
 (() => {
   // IIFE
-
   // '1546387200-1580662800-1614841200-1617573600-1651802400' (dalam string)
   console.log(createDate?.(dates));
-
   // '1614841200' (dalam string)
   console.log(createDate?.(dates, 2));
 })();
