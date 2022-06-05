@@ -14,10 +14,10 @@ const createDate = function (param1, param2) {
     let convertDates = new Date(param1[i]) / 1000;
     arrDates.push(convertDates);
   }
-  let resultArrDates = arrDates.sort();
+  let resultArrDates = arrDates;
   let result;
   if (param2 === undefined) {
-    result = resultArrDates.join("-");
+    result = resultArrDates.sort().join("-");
   } else {
     result = resultArrDates[param2].toString();
   }
